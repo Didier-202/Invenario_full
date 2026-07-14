@@ -27,4 +27,4 @@
         totalInventario += Number(precio) * Number(cantidad);  // multiplica el precio por la cantidad y lo suma a la variable total (number convierte a numero los datos que extraemos del array)
     });
 
-    document.getElementById("valorInventario").textContent = totalInventario;  // agrega el valor del inventario con el id "totalInventario"
+    document.getElementById("valorInventario").textContent = "$ "+ totalInventario;  // agrega el valor del inventario con el id "totalInventario"

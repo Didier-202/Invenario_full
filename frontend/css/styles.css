@@ -12,8 +12,8 @@
   
   --color-primary: #3b82f6;  /* Botones primarios */
   --color-primary-hover: #2563eb;  /* Hover botones primarios */
-  --color-edit: #22c55e;  /* Botones de edición */
-  --color-edit-hover: #16a34a;  /* Hover botones de edición */
+  --color-edit: #10b981;  /* Botones de edición */
+  --color-edit-hover: #059669;  /* Hover botones de edición */
   --color-delete: #ef4444;  /* Botones de eliminación */
   --color-delete-hover: #dc2626;  /* Hover botones de eliminación */
 
@@ -252,25 +252,25 @@ body {
 .btn-edit {
   background: #ecfdf5;
   color: var(--color-edit);
-  border: 1px solid #a7f3d0;
+  border-color: 1px solid #a7f3d0;
 }
 
 /* BOTON ELIMINAR */
 .btn-delete {
-  background: var(--color-bg);
+  background: #fef2f2;
   color: var(--color-delete);
-  border: 1px solid #fecaca;
+  border-color: 1px solid #fecaca;
 }
 
 /* btn HOVER */
 
 .btn-edit:hover {
-  background: var(--color-edit-hover);
+  background: var(--color-edit);
   color: #fff;
   border-color: var(--color-edit);
 }
 .btn-delete:hover {
-  background: var(--color-delete-hover);
+  background: var(--color-delete);
   color: #fff;
   border-color: var(--color-delete);
 }

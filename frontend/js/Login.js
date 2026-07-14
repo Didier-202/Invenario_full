@@ -118,7 +118,7 @@ function login() {
 
   if (validUser) {  // Si el usuario y contraseña son correctos guardar el usuario activo en el local Storage y redirigir al dashboard
     localStorage.setItem("usuarioActivo", user);
-    window.location.href = "dashboard.html"; 
+    window.location.href = "../pages/dashboard.html";
     
     // Aquí luego rediriges al sistema de inventario
     // window.location.href = "dashboard.html";
