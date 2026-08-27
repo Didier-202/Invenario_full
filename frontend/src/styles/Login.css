@@ -1,0 +1,142 @@
+.loginContainer,
+.registroContainer {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* ESTILO DE LAS TARJETAS */
+.card {
+  background: white;
+  padding: 25px ;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 380px;
+}
+
+/*ESTILO DE LOS TÍTULOS*/
+
+h2 {
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+/* ESTILO DE LOS CAMPOS DE TEXTO */
+
+.input-login, 
+.input-registro {
+  width: 100%;
+  padding: 10px 12px; 
+  margin: 10px 0;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #F1F5F9;
+  transition: all 0.3s;
+  font-size: 14px
+}
+
+
+/* EFECTO DE ENFOQUE EN LOS CAMPOS DE TEXTO */
+.input-login:focus,
+.input-registro:focus {
+  border-color: #94a3b8;
+  background-color: #E0F0FF;
+  outline: none;
+}
+
+/* BOTONES*/
+.btn-acceder,
+.btn-registrarse {
+  background: #0f172A;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: none;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* EFECTO HOVER EN LOS BOTONES */
+.btn-acceder:hover {
+  background: #334155;
+  transform: translateY(-1px);
+}
+
+/* BOTONES SECUNDARIOS */
+.secondary {
+  background: transparent;
+  color: #1e293b;
+  border: 1px solid #1e293b;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* EFECTO HOVER EN LOS BOTONES SECUNDARIOS */
+.secondary:hover {
+  background: #334155;
+  transform: translateY(+1px);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/* ESTILO DE LOS MENSAJES DE ERROR Y ÉXITO */
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input.errorInput {
+  border: 2px solid red;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* CONTENEDOR DEL AVATAR */
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* IMAGEN CIRCULAR */
+.avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* hace el círculo */
+  border: 3px solid #6a6f77;
+  object-fit: cover;
+}
+
+/* reponsive */
+@media screen and (max-width: 800px)  {
+  .container {
+    width: 50%;
+  } 
+}
