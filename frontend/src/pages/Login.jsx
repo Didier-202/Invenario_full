@@ -1,12 +1,16 @@
 import { useState } from 'react' 
-import '../styles/Login.css'
+import '../styles/Login.css'   // estilos del login
 
 function Login({irRegistro, irDashboard}) {
     
+
+    // estados del login
     const [usuario, setUsuario] = useState('') 
     const [password, setPassword] = useState('')
     const [error, setError] = useState('') 
 
+
+    // funcion para enviar el login al backend
     async function login() {
         
         const respuesta = await fetch('http://localhost:3000/usuarios/login', {
@@ -29,9 +33,9 @@ function Login({irRegistro, irDashboard}) {
         
     setError('')
 
-    localStorage.setItem("usuarioActivo", JSON.stringify(datos.usuario));
+    localStorage.setItem("usuarioActivo", JSON.stringify(datos.usuario));  // guardamos el usuario en localStorage para mostrarlo en el sidebar
     
-    irDashboard()
+    irDashboard()   // redireccionamos al dashboard si el login es correcto
     
     
     }   
@@ -57,10 +61,10 @@ function Login({irRegistro, irDashboard}) {
                 <input className="input-login"value = {usuario} onChange={e=>setUsuario(e.target.value)} type="text" placeholder="Usuario"/>
                 {/*campo contraseña*/}
                 <input className="input-login"value = {password} onChange={e=>setPassword(e.target.value)} type="password" placeholder="contraseña" />
-                {/* Boton de login */}
+                
                 {error && <p className="error">{error}</p>}
-                <button type="button" className="btn-acceder" onClick={login}>Acceder</button>
-                <button type = "button" className="secondary" onClick={irRegistro}>Registrarse</button>
+                <button type="button" className="btn-acceder" onClick={login}>Acceder</button>   {/* Boton para enviar el login */}
+                <button type = "button" className="secondary" onClick={irRegistro}>Registrarse</button>  {/* Boton para redireccionar al registro */}
 
             </div>
     </div>

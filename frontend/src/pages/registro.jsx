@@ -3,7 +3,7 @@ import '../styles/Login.css'        // Importar estilos para el formulario de re
 
 function Registro({volverLogin}) {
 
-    // Registro de usuario
+    // estados para Registro de usuario
 
     const [nombre, setNombre] = useState('')
     const [documento, setDocumento] = useState('')
@@ -40,7 +40,7 @@ function Registro({volverLogin}) {
                 valido = false;
             }
 
-        if (!documento || isNaN(documento)) {
+        if (!documento || isNaN(documento)) {      // Validar que el documento sea un número
                 setErrores(prev => ({
                 ...prev,
                 documento: 'Ingrese su documento'
@@ -48,7 +48,7 @@ function Registro({volverLogin}) {
                 valido = false;
         }
 
-        if (!telefono || isNaN(telefono)) {
+        if (!telefono || isNaN(telefono)) {   // Validar que el telefono sea un número
                 setErrores(prev => ({
                 ...prev,
                 telefono: 'Teléfono inválido'
@@ -89,6 +89,8 @@ function Registro({volverLogin}) {
         }
 
         if (!valido) {return} 
+
+        // enviamos el formulario al backend - POST
 
         const respuesta = await fetch('http://localhost:3000/usuarios', {
             method: "POST", 

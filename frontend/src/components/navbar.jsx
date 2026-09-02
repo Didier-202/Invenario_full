@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import '../styles/navbar.css'
+import '../styles/navbar.css'    // estilos del navbar
 
 function Navbar({irUsuarios, irDashboard, irProductos, volverLogin}) {
 
-    const [mostrarSidebar, setMostrarSidebar] = useState(false)
+    const [mostrarSidebar, setMostrarSidebar] = useState(false)  // estados del sidebar
 
 
     // abrir/cerrar el sidebar

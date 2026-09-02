@@ -3,6 +3,8 @@ import '../styles/usuarios.css'
 
 function Usuarios() {
 
+    // estados del usuarios
+
     const [errores, setErrores] = useState({})
 
     const [usuarios, setUsuarios] = useState([])
@@ -49,7 +51,8 @@ function Usuarios() {
 
     }
 
-        
+    // funcion para guardar los cambios en el usuario
+
     async function guardarCambios() {
 
         const { nombre, documento, telefono, correo } = formularioEditar
@@ -98,6 +101,7 @@ function Usuarios() {
                     return;                
         }
         
+        // enviamos el formulario editado al backend - PUT
         const respuesta = await fetch(
             `http://localhost:3000/usuarios/ ${usuarioSeleccionado.id_usuario}`,
             {
@@ -119,7 +123,7 @@ function Usuarios() {
         console.log (datos.mensaje)
 
         await cargarUsuarios()
-        setMostrarFormularioEditar(false)
+        setMostrarFormularioEditar(false)  // cerramos el formulario de edición 
     }
 
     // DELETE — eliminar usuario
@@ -148,7 +152,7 @@ function Usuarios() {
 
         console.log (datos.mensaje)
 
-        await cargarUsuarios()
+        await cargarUsuarios()  // actualizamos el usuario en el backend y recargamos la tabla de usuarios
     }
 
     return (

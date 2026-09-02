@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 
-import '../styles/dashboard.css'
+import '../styles/dashboard.css'  // estilos del dashboard
 
 function Dashboard() {
 
-const [cantidadUsuarios, setCantidadUsuarios] = useState(0)
+    // estados del dashboard
+
+const [cantidadUsuarios, setCantidadUsuarios] = useState(0)  
 const [cantidadReferencias, setCantidadReferencias] = useState(0)
 const [cantidadUnidades, setCantidadUnidades] = useState(0)
 const [valorInventario, setValorInventario] = useState(0)
+
+ // useEffect para obtener los usuarios del backend
 
     useEffect(() => {
 
@@ -25,6 +29,8 @@ const [valorInventario, setValorInventario] = useState(0)
 
     }, [])
 
+    // useEffect para obtener la cantidad de productos del backend
+
     useEffect(() => {
         async function cargarReferencias() {
             const respuesta = await fetch(
@@ -35,6 +41,8 @@ const [valorInventario, setValorInventario] = useState(0)
         }
         cargarReferencias()
     }, [])
+
+    // useEffect para obtener la cantidad de unidades del backend
 
         useEffect(() => {
         async function cargarUnidades() {
@@ -47,6 +55,7 @@ const [valorInventario, setValorInventario] = useState(0)
         cargarUnidades()
     }, [])
 
+    // useEffect para obtener el valor del inventario del backend 
     useEffect(() => {
         async function cargarValorInventario() {
             const respuesta = await fetch(
@@ -59,7 +68,8 @@ const [valorInventario, setValorInventario] = useState(0)
     },[])
 
     return (
-        <section className="inicio" id="modDashboard">  {/*seccion de dasboard (resumen de la pagina)*/}
+        
+        <section className="inicio" id="modDashboard">  {/*seccion de dasboard */}
             <header className="header">
                 <h2 className="titulo">Dashboard</h2>
             </header>
@@ -86,4 +96,4 @@ const [valorInventario, setValorInventario] = useState(0)
     )
 }
 
-export default Dashboard
+export default Dashboard  // exportamos el componente Dashboard

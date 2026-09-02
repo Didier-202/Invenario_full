@@ -4,6 +4,8 @@ import '../styles/productos.css'
 
 function Productos() {
 
+    // estados del productos
+
     const [producto, setProductos] = useState([])
     const [productoSeleccionado, setProductoSeleccionado] = useState(null)
     const [modoFormulario, setModoformulario] = useState('agregar')
