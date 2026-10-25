@@ -8,11 +8,12 @@ const usuarios = require('./routes/usuarios');
 const movimientos = require('./routes/movimientos');
 
 const app = express();                       // Crear un objeto de la clase express
+app.disable('x-powered-by');                          // Deshabilitar la cabecera x-powered-by para mayor seguridad
+app.use(cors({origin: 'http://localhost:5173'}));     // Middleware para permitir solicitudes de origen en el dominio
 
 
 // RUTAS
-app.use(cors());                                     // Middleware para permitir solicitudes de origen cruzado
-app.use(express.json());                                 // Middleware para parsear el cuerpo de las solicitudes como JSON
+app.use(express.json());                              // Middleware para parsear el cuerpo de las solicitudes como JSON
 app.use('/productos', productos);                   // Agregar el router de productos a la ruta /productos
 app.use('/categorias', categorias);
 app.use('/usuarios', usuarios);
