@@ -72,6 +72,7 @@ router.get("/:id", async (req, res) => {
     res.send(productos);
 });
 
+
 // Ruta para insertar un producto en la base de datos
 router.post('/', async (req, res) => {
     const {nombre, precio, cantidad} = req.body; // Obtener el producto del cuerpo de la solicitud
